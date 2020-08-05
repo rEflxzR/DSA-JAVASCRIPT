@@ -63,6 +63,7 @@ class Queue {
             this.last = newnode
         }
         this.length++
+        return newnode
     }
 
     dequeue() {
