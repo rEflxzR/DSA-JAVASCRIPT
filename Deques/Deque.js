@@ -8,8 +8,8 @@ class Node {
 
 class Deque {
     constructor(size=Infinity) {
-        this.head = null
-        this.tail = null
+        this.front = null
+        this.rear = null
         this.size = size
         this.length = 0
     }
@@ -23,7 +23,7 @@ class Deque {
     }
 
     isEmpty() {
-        return this.head==null && this.tail==null
+        return this.front==null && this.rear==null
     }
 
     getFront() {
@@ -31,7 +31,7 @@ class Deque {
             return null
         }
 
-        return this.head.data
+        return this.front.data
     }
 
     getRear() {
@@ -39,13 +39,13 @@ class Deque {
             return null
         }
 
-        return this.tail.data
+        return this.rear.data
     }
 
     removeSingleNode() {
-        let temp = this.head
-        this.head = null
-        this.tail = null
+        let temp = this.front
+        this.front = null
+        this.rear = null
         this.length--
 
         return temp
@@ -57,14 +57,14 @@ class Deque {
         }
 
         let newnode = new Node(val)
-        if(!this.head) {
-            this.head = newnode
-            this.tail = newnode
+        if(!this.front) {
+            this.front = newnode
+            this.rear = newnode
         }
         else {
-            newnode.next = this.head
-            this.head.previous = newnode
-            this.head = newnode
+            newnode.next = this.front
+            this.front.previous = newnode
+            this.front = newnode
         }
         this.length++
     }
@@ -75,14 +75,14 @@ class Deque {
         }
 
         let newnode = new Node(val)
-        if(!this.tail) {
-            this.head = newnode
-            this.tail = newnode
+        if(!this.rear) {
+            this.front = newnode
+            this.rear = newnode
         }
         else {
-            newnode.previous = this.tail
-            this.tail.next = newnode
-            this.tail = newnode
+            newnode.previous = this.rear
+            this.rear.next = newnode
+            this.rear = newnode
         }
         this.length++
     }
@@ -91,14 +91,14 @@ class Deque {
         if(this.isEmpty()) {
             return "Deque is Empty"
         }
-        if(this.head==this.tail) {
+        if(this.front==this.rear) {
             return this.removeSingleNode()
         }
 
-        let temp = this.head
-        this.head = temp.next
+        let temp = this.front
+        this.front = temp.next
         temp.next = null
-        this.head.previous = null
+        this.front.previous = null
         this.length--
         return temp
     }
@@ -108,13 +108,13 @@ class Deque {
             return "Deque is Empty"
         }
 
-        if(this.head==this.tail) {
+        if(this.front==this.rear) {
             return this.removeSingleNode()
         }
 
-        let temp = this.tail
-        this.tail = temp.previous
-        this.tail.next = null
+        let temp = this.rear
+        this.rear = temp.previous
+        this.rear.next = null
         temp.previous = null
         this.length--
 
