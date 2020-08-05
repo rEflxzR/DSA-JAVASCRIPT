@@ -53,7 +53,7 @@ class Deque {
 
     addFront(val) {
         if(this.isFull()) {
-            console.log("No More Space, Deque is Full")
+            return "No More Space, Deque is Full"
         }
 
         let newnode = new Node(val)
@@ -71,7 +71,7 @@ class Deque {
 
     addRear(val) {
         if(this.isFull()) {
-            console.log("No More Space, Deque is Full")
+            return "No More Space, Deque is Full"
         }
 
         let newnode = new Node(val)
