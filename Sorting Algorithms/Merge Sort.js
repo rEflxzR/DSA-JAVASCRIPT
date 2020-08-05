@@ -39,7 +39,4 @@ function mergeSort(arr) {
     return mergeArrays(mergeSort(arr.slice(0, Math.floor(arr.length/2))), mergeSort(arr.slice(Math.floor(arr.length/2))))
 }
 
-
-console.log(mergeArrays([3,6,4,8,2], [1,9,5,7]))
-console.log(`\n`)
 console.log(mergeSort([3,6,4,8,2,1,9,5,7,13,65,45,34,94,27,35,75,69,345,634,526]))
