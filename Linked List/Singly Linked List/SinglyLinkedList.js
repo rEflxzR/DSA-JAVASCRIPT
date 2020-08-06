@@ -55,6 +55,7 @@ class SinglyLinkedList {
         if(this.isEmpty()) {
             return `Linked List is Empty`
         }
+        
         else {
             let temp = this.head
             while(temp.next.next!= null) {
@@ -73,6 +74,7 @@ class SinglyLinkedList {
         if(this.isEmpty()) {
             return 'Linked List is Empty'
         }
+
         else {
             let temp = this.head
             this.head = temp.next
@@ -84,11 +86,8 @@ class SinglyLinkedList {
     }
 
     get(n) {
-        if(n < 0 || n > this.length) {
+        if(n <= 0 || n > this.length) {
             return `Invalid Index Value`
-        }
-        if(this.isEmpty()) {
-            return `Linked List is Empty`
         }
 
         let temp = this.head
@@ -100,25 +99,20 @@ class SinglyLinkedList {
     }
 
     set(n, val) {
-        if(n < 0 || n > this.length) {
+        if(n <= 0 || n > this.length) {
             return `Invalid Index Value`
         }
-        if(this.isEmpty()) {
-            return `Linked List is Empty`
+
+        let temp = this.head
+        for(let i=1; i<n; i++) {
+            temp = temp.next
         }
 
-        let i=1
-        let temp = this.head
-        while(i<n) {
-            temp = temp.next
-            i++
-        }
-        
         temp.data = val
     }
 
     insert(n, val) {
-        if(n < 0 || n > this.length) {
+        if(n <= 0 || n > this.length) {
             return `Invalid Index Value`
         }
 
@@ -129,11 +123,9 @@ class SinglyLinkedList {
             this.head = newnode
         }
         else {
-            let i=1
             let temp = this.head
-            while(i<n-1) {
+            for(let i=1; i<n-1; i++) {
                 temp = temp.next
-                i++
             }
             newnode.next = temp.next
             temp.next = newnode
@@ -142,11 +134,8 @@ class SinglyLinkedList {
     }
 
     remove(n) {
-        if(n < 0 || n > this.length) {
+        if(n <= 0 || n > this.length) {
             return `Invalid Index Value`
-        }
-        if(this.isEmpty()) {
-            return `Linked List is Empty`
         }
 
         let temp = this.head
@@ -155,19 +144,9 @@ class SinglyLinkedList {
             this.head = temp.next
             temp.next = null
         }
-        else if(n==this.length) {
-            while(temp.next.next != null) {
-                temp = temp.next
-            }
-            this.tail = temp
-            temp = temp.next
-            this.tail.next = null
-        }
         else {
-            let i=1
-            while(i<n-1) {
+            for(let i=1; i<n-1; i++) {
                 temp = temp.next
-                i++
             }
             let currnode = temp
             temp = temp.next
@@ -175,6 +154,7 @@ class SinglyLinkedList {
             temp.next = null
         }
         this.length--
+
         return temp
     }
 
