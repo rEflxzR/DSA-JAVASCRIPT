@@ -12,22 +12,47 @@ class SinglyLinkedList {
         this.tail = null
     }
 
-    push(data) {
-        let newNode = new Node(data)
-        if(this.head==null) {
+    isEmpty() {
+        return this.head==null && this.tail==null
+    }
+
+    front() {
+        return this.head
+    }
+   
+    back() {
+        return this.tail
+    }
+
+    pushFront(val) {
+        let newnode = new Node(val)
+
+        if(this.isEmpty()) {
+            this.head = newnode
+            this.tail = newnode
+        }
+        else {
+            newnode.next = this.head
+            this.head = newnode
+        }
+        this.length++
+    }
+
+    pushBack(val) {
+        let newNode = new Node(val)
+        if(this.isEmpty()) {
             this.head = newNode
-            this.tail = this.head
+            this.tail = newnode
         }
         else {
             this.tail.next = newNode
             this.tail = newNode
         }
         this.length++
-        return this
     }
 
-    pop() {
-        if(this.head==null) {
+    popBack() {
+        if(this.isEmpty()) {
             return `Linked List is Empty`
         }
         else {
@@ -35,17 +60,17 @@ class SinglyLinkedList {
             while(temp.next.next!= null) {
                 temp = temp.next
             }
-            let lastnode = temp.next
             this.tail = temp
-            temp.next = null
+            temp = temp.next
+            this.tail.next = null
             this.length--
 
-            return lastnode
+            return temp
         }
     }
 
-    shift() {
-        if(this.head==null) {
+    popFront() {
+        if(this.isEmpty()) {
             return 'Linked List is Empty'
         }
         else {
@@ -58,38 +83,30 @@ class SinglyLinkedList {
         }
     }
 
-    unshift(val) {
-        let newnode = new Node(val)
-
-        if(this.head==null) {
-            this.head = newnode
-            this.tail = newnode
-        }
-        else {
-            newnode.next = this.head
-            this.head = newnode
-        }
-
-        this.length++
-    }
-
     get(n) {
-        if(this.head==null) {
-            return `Linked List is Empty`
-        }
-        else if(n < 0 || n > this.length) {
+        if(n < 0 || n > this.length) {
             return `Invalid Index Value`
         }
-        else {
-            let temp = this.head
-            for(let i=1; i<n; i++) {
-                temp = temp.next
-            }
-            return temp
+        if(this.isEmpty()) {
+            return `Linked List is Empty`
         }
+
+        let temp = this.head
+        for(let i=1; i<n; i++) {
+            temp = temp.next
+        }
+
+        return temp
     }
 
     set(n, val) {
+        if(n < 0 || n > this.length) {
+            return `Invalid Index Value`
+        }
+        if(this.isEmpty()) {
+            return `Linked List is Empty`
+        }
+
         let i=1
         let temp = this.head
         while(i<n) {
@@ -97,19 +114,18 @@ class SinglyLinkedList {
             i++
         }
         temp.data = val
-        return temp
     }
 
     insert(n, val) {
+        if(n < 0 || n > this.length) {
+            return `Invalid Index Value`
+        }
+
         let newnode = new Node(val)
 
         if(n==1) {
             newnode.next = this.head
             this.head = newnode
-            this.length++
-        }
-        else if(n > this.length || n < 0) {
-            console.log("Invalid Index Provided")
         }
         else {
             let i=1
@@ -120,97 +136,60 @@ class SinglyLinkedList {
             }
             newnode.next = temp.next
             temp.next = newnode
-            this.length++
         }
+        this.length++
     }
 
     remove(n) {
-        if(n<=this.length && n>0) {
-
-            let temp = this.head
-
-            if(n==1) {
-                this.head = temp.next
-                temp.next = null
-            }
-            else if(n==this.length) {
-                while(temp.next.next != null) {
-                    temp = temp.next
-                }
-                let newlastnode = temp
-                temp = temp.next
-                newlastnode.next = null
-                this.tail = newlastnode
-            }
-            else {
-                let i=1
-                while(i<n-1) {
-                    temp = temp.next
-                    i++
-                }
-                let currnode = temp
-                currnode.next = temp.next.next
-                temp.next = null
-            }
-            this.length--
-            return temp
+        if(n < 0 || n > this.length) {
+            return `Invalid Index Value`
         }
-        else {
-            return `Invalid Index value`
+        if(this.isEmpty()) {
+            return `Linked List is Empty`
         }
-    }
 
-    reverse() {
         let temp = this.head
-        this.tail = temp
-        let nextnode = temp.next
-        let secondnextnode = temp.next.next
-        while(secondnextnode != null) {
-            nextnode.next = temp
-            temp = nextnode
-            nextnode = secondnextnode
-            secondnextnode = secondnextnode.next
-        }
-        nextnode.next = temp
-        let newtail = this.head
-        newtail.next = null
-        this.head = nextnode
-        this.tail = newtail
-    }
 
-    print() {
-        if(!this.head) {
-            console.log("The List is Empty")
+        if(n==1) {
+            this.head = temp.next
+            temp.next = null
+        }
+        else if(n==this.length) {
+            while(temp.next.next != null) {
+                temp = temp.next
+            }
+            this.tail = temp
+            temp = temp.next
+            this.tail.next = null
         }
         else {
             let i=1
-            let temp = this.head
-            while(i <= this.length) {
-                console.log(temp.data)
+            while(i<n-1) {
                 temp = temp.next
                 i++
+            }
+            let currnode = temp
+            temp = temp.next
+            currnode.next = temp.next
+            temp.next = null
+        }
+        this.length--
+        return temp
+    }
+
+    print() {
+        if(this.isEmpty()) {
+            console.log(`Linked List is Empty`)
+        }
+        else {
+            let temp = this.head
+            while(temp!=null) {
+                console.log(temp.data)
+                temp = temp.next
             }
         }
     }
 }
 
-let list = new SinglyLinkedList()
-list.print()
-console.log("\n--------Push Operation--------\n")
-list.push("ReflxzR")
-list.push("jAnzWE")
-list.push("rEplan")
-list.push("qLimAxz")
-list.push("kEX")
-list.push("PC")
-console.log(list)
-console.log("\n")
-list.print()
-console.log("\n")
-
-console.log("-----Reverse Operation-----")
-list.reverse()
-console.log("\n")
-list.print()
-console.log("\n")
-console.log(list)
+module.exports.Node = Node
+module.exports.SinglyLinkedList = SinglyLinkedList
