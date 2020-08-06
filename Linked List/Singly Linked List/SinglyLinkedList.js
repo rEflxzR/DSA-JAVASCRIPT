@@ -42,7 +42,7 @@ class SinglyLinkedList {
         let newNode = new Node(val)
         if(this.isEmpty()) {
             this.head = newNode
-            this.tail = newnode
+            this.tail = newNode
         }
         else {
             this.tail.next = newNode
