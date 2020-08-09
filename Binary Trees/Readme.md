@@ -30,9 +30,9 @@ A Tree is said to be a Binary Tree if all of its nodes have atmost 2 children. T
 **Complete Binary Tree:** A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible. Following are examples of Complete Binary Trees:<br/>
 ![Complete Binary Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191211141521/416.png)
 ![Complete Binary Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191211141536/520.png)
-######In a Full Binary, number of leaf nodes is number of internal nodes plus 1.######
+###### In a Full Binary, number of leaf nodes is number of internal nodes plus 1
 <br/>
 **Perfect Binary Tree:** A Binary tree is Perfect Binary Tree in which all internal nodes have two children and all leaves are at the same level. Following are examples of Perfect Binary Trees:<br/>
 ![Perfect Binary Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191211141548/617.png)
 ![Perfect Binary Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191211141559/714.png)
-######A Perfect Binary Tree of height h (where height is the number of nodes on the path from the root to leaf) has 2h – 1 node######
+###### A Perfect Binary Tree of height h (where height is the number of nodes on the path from the root to leaf) has 2h – 1 node
