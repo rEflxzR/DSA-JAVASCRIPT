@@ -2,7 +2,7 @@
 
 A Tree is said to be a Binary Tree if all of its nodes have atmost 2 children. That is, all of its node can have either no child, 1 child or 2 child nodes.
 
-![Binary Tree](https://www.cdn.geeksforgeeks.org/wp-content/uploads/tree.jpg)
+![Binary Tree](https://media.geeksforgeeks.org/wp-content/uploads/binary_tree-1.png)
 
 ## Basic Tree Terminologies:
 **Root:** The root of a tree is the first node of the tree. In the above image, the root node is the node 30.<br/>
