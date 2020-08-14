@@ -174,3 +174,12 @@ class SinglyLinkedList {
 
 module.exports.Node = Node
 module.exports.SinglyLinkedList = SinglyLinkedList
+
+let list = new SinglyLinkedList()
+
+list.pushBack(10)
+list.pushBack(20)
+list.pushBack(30)
+list.pushBack(40)
+console.log(list.remove(4))
+list.print()

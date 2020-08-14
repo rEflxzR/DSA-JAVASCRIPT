@@ -8,7 +8,6 @@ function reverseSinglyLinkedList(list, headnode) {
     if(list.isEmpty() || list.length==1) {
         return
     }
-    
     let currentnode = headnode
     let previousnode = null
     let nextnode = currentnode.next
@@ -26,6 +25,7 @@ function reverseSinglyLinkedList(list, headnode) {
 }
 
 
+
 let list = new SinglyLinkedList()
 list.pushBack(10)
 list.pushBack(20)
@@ -36,7 +36,7 @@ list.pushBack(50)
 console.log(list.head)
 console.log(list.tail)
 list.print()
-console.log("\n\n---------------------------After Reversing the Linked List---------------------------\n\n")
+console.log("\n\n---------------------------After Reversing Linked List---------------------------\n\n")
 reverseSinglyLinkedList(list, list.head)
 list.print()
 console.log(list.head)

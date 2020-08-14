@@ -1,4 +1,4 @@
-// The array implementation of Queue is very easy however, the Dequeue operation here has Time Complexity O(n) which makes the Linked List implementation more suitable
+// The array implementation of Queue is very easy however, the Dequeue operation here is O(n) which makes the Linked List implementation more suitable
 
 class Queue {
     constructor(size=Infinity) {
