@@ -2,7 +2,7 @@
     SIZE OF A BINARY TREE MEANS THE NUMBER OF NODES THAT ARE PRESENT IN THE BINARY TREE
 */
 
-let {Node, BinaryTree} = require('./Binary Tree Node.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 let tree = new BinaryTree()
 

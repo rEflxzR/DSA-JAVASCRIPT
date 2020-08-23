@@ -7,7 +7,7 @@
     THRE RETURN STATEMENT AT THE END RETURNS THE ARRAY BUT THAT IS NOT UTILIZED ANYWHERE SO RESULTS ARE NOT AFFECTED
 */
 
-let {Node, BinaryTree} = require('../Binary Tree Node.js')
+let {Node, BinaryTree} = require('../../BINARY TREE NODE.js')
 
 let tree = new BinaryTree()
 

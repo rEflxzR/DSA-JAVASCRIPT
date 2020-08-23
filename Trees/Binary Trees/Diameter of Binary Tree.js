@@ -1,4 +1,4 @@
-let {Node, BinaryTree} = require('./BINARY TREE NODE.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 /*
     TRAVERSE THE LEFT AND RIGHT SUBTREE, AND FOR EACH NODE YOU CALCULATE THE DIAMETER AND UPDATE THE RESULT

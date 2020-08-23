@@ -25,6 +25,7 @@ function activitySelection(array) {
     return result.length
 }
 
+// [Start_time, End_time]
 console.log(activitySelection([[3,8], [2,4], [1,3], [10,11]]))
 console.log(activitySelection([[6,10], [1,4], [5,8], [2,3]]))
 console.log(activitySelection([[12,25], [10,20], [20,30]]))

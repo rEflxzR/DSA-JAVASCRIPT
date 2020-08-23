@@ -1,4 +1,4 @@
-let {BinaryTree} = require('./BINARY TREE NODE.js')
+let {BinaryTree} = require('../BINARY TREE NODE.js')
 
 /*
     WE HAVE TO CONVERT THE TREE INTO DOUBLY LINKED LIST. THE ORDER OF LINKED LIST NODES WOULD BE INORDER

@@ -1,6 +1,6 @@
-let {Node, BinaryTree} = require('./BINARY TREE NODE.js')
-let {Queue} = require('../Queues/Queue.js')
-let {Stack} = require('../Stacks/Stack.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
+let {Queue} = require('../../Queues/Queue.js')
+let {Stack} = require('../../Stacks/Stack.js')
 
 
 function spiralForm(rootnode) {

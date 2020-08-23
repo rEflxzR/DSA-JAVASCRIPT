@@ -27,5 +27,6 @@ function fractionalKnapsack(array, capacity) {
     return result
 }
 
+// [Item_weight, Total_price]
 console.log(fractionalKnapsack([[50, 600], [20, 500], [30, 400]], 70))
 console.log(fractionalKnapsack([[10, 200], [5, 50], [20, 100]], 15))

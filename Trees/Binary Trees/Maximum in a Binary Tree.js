@@ -2,7 +2,7 @@
     FOR THIS PROBLEM, WE HAVE TO FIND OUT THE MAXIMUM VALUE NODE PRESENT IN THE BINARY TREE
 */
 
-let {Node, BinaryTree} = require('./Binary Tree Node.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 let tree = new BinaryTree()
 

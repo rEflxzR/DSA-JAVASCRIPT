@@ -1,4 +1,4 @@
-let {Node, BinaryTree} = require('./BINARY TREE NODE.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 
 function lowestCommonAncestor(rootnode, n1, n2) {

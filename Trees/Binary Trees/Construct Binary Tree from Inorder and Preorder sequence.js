@@ -1,4 +1,4 @@
-let {Node, BinaryTree} = require('./BINARY TREE NODE.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 let preorderindex = 0
 function binaryTree(inorder, preorder, inorderstart=0, inorderend=inorder.length-1) {

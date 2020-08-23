@@ -1,3 +1,5 @@
+// Binary Tree class
+
 class Node {
     constructor(val) {
         this.data = val

@@ -47,6 +47,7 @@ function jobScheduling(array) {
 }
 
 
+// [Job_deadline_time, Job_completion_Profit]
 console.log(jobScheduling([[2, 100], [1, 50], [2, 10], [1, 20], [3, 30]]))
 console.log(jobScheduling([[2, 50], [2, 60], [3, 20], [3, 30]]))
 console.log(jobScheduling([[4, 50], [1, 5], [1, 20], [5, 10], [5, 80]]))

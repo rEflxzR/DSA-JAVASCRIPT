@@ -1,5 +1,5 @@
-let {Node, BinaryTree} = require('./BINARY TREE NODE.js')
-let {Queue} = require('../Queues/Queue.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
+let {Queue} = require('../../Queues/Queue.js')
 
 /*
     WE CAN FIND THE MAX WIDTH OF ANY LEVEL, BY USING LEVEL ORDER TRAVERSAL FOR A TREE

@@ -1,4 +1,4 @@
-let {Node, BinaryTree} = require('./BINARY TREE NODE.js')
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 let tree = new BinaryTree()
 
