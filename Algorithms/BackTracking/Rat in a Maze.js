@@ -1,36 +1,38 @@
-function isSafe(i, j, N, matrix) {
-    if(i<N && j<N && matrix[i][j]==1) {
+function isSafe(matrix_size, mat, i, j) {
+    if(i<matrix_size && j<matrix_size && mat[i][j]==1) {
         return true
     }
 }
 
-function ratMaze(maze, i, j, N, sol) {
+function backTracking(matrix, N, i, j, solmaze) {
     if(i==N-1 && j==N-1) {
-        sol[i][j]=1
+        solmaze[i][j]=1
         return true
     }
 
-    if(isSafe(maze, i, j, N)==true) {
-        sol[i][j] = 1
-        if(isSafe(maze, i+1,j, N)==true) {
+    if(isSafe(N, matrix, i, j)==true) {
+        solmaze[i][j]=1
+        if(backTracking(matrix, N, i+1, j, solmaze)) {
             return true
         }
-        else if(isSafe(maze, i, j+1, N)==true) {
+        else if(backTracking(matrix, N, i, j+1, solmaze)) {
             return true
         }
-        sol[i][j]=0
+        solmaze[i][j]=0
     }
     return false
 }
 
-function Backtracking(matrix) {
-    let N = matrix[0].length
-    let solution = [[], [], []]
-    if(ratMaze(matrix, 0, 0, N, solution)==true) {
-        return solution
-    }
-    // return solution
+function solveMaze(maze) {
+    let given_matrix = maze
+    let size = given_matrix.length
+    let solutionMaze = [...Array(size)].map(e => Array(size).fill(0));
+
+
+    backTracking(given_matrix, size, 0, 0, solutionMaze)
+    console.log(solutionMaze)
 }
 
 
-console.log(Backtracking([[1,0,1], [1,1,0], [0,1,1]]))
+
+solveMaze([[1,0,1], [1,1,0], [0,1,1]])
