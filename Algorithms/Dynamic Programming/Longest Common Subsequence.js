@@ -59,3 +59,6 @@ console.log(longestCommonSubsequence("ReflxzR", "PhanxzR"))
 console.log(longestCommonSubsequence("XYZPRS", "GHJK"))
 console.log(longestCommonSubsequence("JWLWGGGPSK", "IUGGWPK"))
 console.log(longestCommonSubsequence("YNWALFC", "kensuwbjusYNWALFC"))
+
+// Take a String, Reverse it and Find their LCS = Longest Palindromic Subsequence
+console.log(longestCommonSubsequence("GEEKSFORGEEKS", "SKEEGROFSKEEG"))
