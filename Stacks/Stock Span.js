@@ -13,7 +13,7 @@ function stocksSpan(array) {
     console.log(1)
 
     for(let i=1; i<array.length; i++) {
-        while( !stack.isEmpty() && array[i]>=array[stack.top().data] ) {
+        while( !stack.isEmpty() && array[i]>=array[stack.top()] ) {
             stack.pop()
         }
 
@@ -21,7 +21,7 @@ function stocksSpan(array) {
             console.log(i+1)
         }
         else {
-            console.log(i-stack.top().data)
+            console.log(i-stack.top())
         }
 
         stack.push(i)
@@ -30,5 +30,7 @@ function stocksSpan(array) {
 
 
 stocksSpan([15, 13, 12, 14, 16, 8, 6, 4, 10, 30])
+console.log("\n")
 stocksSpan([10, 20, 30, 40, 50])
+console.log("\n")
 stocksSpan([80, 74, 62, 32, 5])

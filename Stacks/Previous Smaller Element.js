@@ -8,11 +8,11 @@ function previousSmallerElement(array) {
     arr.push(-1)
 
     for(let i=1; i<array.length; i++) {
-        while( !stack.isEmpty() && array[i]<= array[stack.top().data] ) {
+        while( !stack.isEmpty() && array[i]<= array[stack.top()] ) {
             stack.pop()
         }
 
-        stack.isEmpty() ? arr.push(-1) : arr.push(array[stack.top().data])
+        stack.isEmpty() ? arr.push(-1) : arr.push(array[stack.top()])
         stack.push(i)
     }
 

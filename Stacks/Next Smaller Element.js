@@ -9,11 +9,11 @@ function nextSmallerElement(array) {
     arr.push(-1)
 
     for(let i=array.length-2; i>=0; i--) {
-        while( !stack.isEmpty() && array[i] <= stack.top().data ) {
+        while( !stack.isEmpty() && array[i] <= stack.top()) {
             stack.pop()
         }
 
-        stack.isEmpty() ? arr.push(-1) : arr.push(stack.top().data)
+        stack.isEmpty() ? arr.push(-1) : arr.push(stack.top())
         stack.push(array[i])
     }
 

@@ -8,11 +8,11 @@ function nextGreaterElement(array) {
     arr.push(array[array.length-1])
 
     for(let i=array.length-2; i>=0; i--) {
-        while(!stack.isEmpty() && array[i] >= array[stack.top().data] ) {
+        while(!stack.isEmpty() && array[i] >= array[stack.top()] ) {
             stack.pop()
         }
 
-        stack.isEmpty() ? arr.push(-1) : arr.push(array[stack.top().data])
+        stack.isEmpty() ? arr.push(-1) : arr.push(array[stack.top()])
         
         stack.push(i)
     }

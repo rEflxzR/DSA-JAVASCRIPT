@@ -2,11 +2,11 @@ let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
 
 let tree = new BinaryTree()
 
-// tree.root = new Node(3)                     // FALSE
-// tree.root.left = new Node(1)
-// tree.root.right = new Node(2)
-// tree.root.right.left = new Node(1)
-// tree.root.right.right = new Node(2)
+tree.root = new Node(3)                     // FALSE
+tree.root.left = new Node(1)
+tree.root.right = new Node(2)
+tree.root.right.left = new Node(1)
+tree.root.right.right = new Node(2)
 
 // tree.root = new Node(20)                    // TRUE
 // tree.root.left = new Node(8)

@@ -16,7 +16,7 @@ function spiralForm(rootnode) {
 
         if(level%2==0) {
             for(let i=0; i<size; i++) {
-                let node = stack.pop().data
+                let node = stack.pop()
                 if(node.left) {
                     queue.enqueue(node.left)
                 }
@@ -27,7 +27,7 @@ function spiralForm(rootnode) {
         }
         else {
             for(let i=0; i<size; i++) {
-                let node = stack.pop().data
+                let node = stack.pop()
                 if(node.right) {
                     queue.enqueue(node.right)
                 }
@@ -39,7 +39,7 @@ function spiralForm(rootnode) {
         
         level++
         while(!queue.isEmpty()) {
-            let newdata = queue.dequeue().data
+            let newdata = queue.dequeue()
             res.push(newdata.data)
             stack.push(newdata)
         }

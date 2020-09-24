@@ -104,7 +104,7 @@ class DirectedGraph {
 
 
 // UNDIRECTED WEIGHTED GRAPH
-class WeightedGraph {
+class UndirectedWeightedGraph {
     constructor() {
         this.list = {}
     }
@@ -175,6 +175,71 @@ class WeightedGraph {
     }
 }
 
+
+
+// DIRECTED WEIGHTED GRAPH       // LAST TWO METHODS NOT IMPLEMENTED YET
+class DirectedWeightedGraph {
+    constructor() {
+        this.list = {}
+    }
+
+    addVertex(v) {
+        if(this.list[v]==undefined) {
+            this.list[v] = []
+        }
+    }
+
+    addEdge(v1, v2, w) {
+        if(this.list[v1]!=undefined && this.list[v2]!=undefined) {
+            this.list[v1].push({vertex: v2, weight: w})
+        }
+    }
+
+    removeEdge(v1, v2) {
+        let l1 = this.list[v1]
+        let i1 = -1
+        for(let i=0; i<l1.length; i++) {
+            if(l1[i].vertex==v2) {
+                i1 = i
+                break
+            }
+        }
+
+        if(i1!=-1 && i2!=-1) {
+            let temp = l1.splice(i1+1)
+            l1.pop()
+            this.list[v1] = l1.concat(temp)
+        }
+    }
+
+    removeVertex(v) {
+        if(this.list[v]!=undefined) {
+            for(let vertex of Object.keys(this.list[v])) {
+                if(vertex==v) {
+                    continue
+                }
+                let index = -1
+                for(let i=0; i<this.list[vertex].length; i++) {
+                    if(this.list[vertex][i]==v) {
+                        index = i
+                        break
+                    }
+                }
+                let temp = this.list.splice(index+1)
+                this.list[vertex].pop()
+                this.list[vertex] = this.list[vertex].concat(temp)
+            }
+            delete this.list[v]
+        }
+    }
+
+    show() {
+        console.log(this.list)
+    }
+}
+
+
 module.exports.Graph = Graph
 module.exports.DirectedGraph = DirectedGraph
-module.exports.WeightedGraph = WeightedGraph
+module.exports.UndirectedWeightedGraph = UndirectedWeightedGraph
+module.exports.DirectedWeightedGraph = DirectedWeightedGraph

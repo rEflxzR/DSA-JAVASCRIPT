@@ -22,7 +22,7 @@ function reverseQueue(queue) {
 
     let stack = []
     while(!queue.isEmpty()) {
-        stack.push(queue.dequeue().data)
+        stack.push(queue.dequeue())
     }
     while(stack.length) {
         queue.enqueue(stack.pop())

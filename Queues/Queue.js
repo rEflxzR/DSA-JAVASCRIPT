@@ -29,14 +29,14 @@ class Queue {
         if(this.isEmpty()) {
             return null
         }
-        return this.first
+        return this.first.data
     }
 
     back() {
         if(this.isEmpty()) {
             return null
         }
-        return this.last
+        return this.last.data
     }
 
     removeSingleNode() {
@@ -45,7 +45,7 @@ class Queue {
         this.last = null
         this.length--
 
-        return temp
+        return temp.data
     }
 
     enqueue(val) {
@@ -63,7 +63,7 @@ class Queue {
             this.last = newnode
         }
         this.length++
-        return newnode
+        return newnode.data
     }
 
     dequeue() {
@@ -81,7 +81,7 @@ class Queue {
             temp.next = null
             this.length--
 
-            return temp
+            return temp.data
         }
     }
 }

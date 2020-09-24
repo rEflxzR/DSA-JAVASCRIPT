@@ -18,7 +18,7 @@ class Stack {
     }
 
     top() {
-        return this.first
+        return this.first.data
     }
 
     size() {
@@ -39,7 +39,7 @@ class Stack {
             this.first = newnode
         }
         this.length++
-        return newnode
+        return newnode.data
     }
 
     pop() {
@@ -57,7 +57,7 @@ class Stack {
             temp.next = null
         }
         this.length--
-        return temp
+        return temp.data
     }
 }
 

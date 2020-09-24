@@ -34,13 +34,13 @@ class MyNewStack {
         }
 
         while(!queue1.isEmpty()) {
-            queue2.enqueue(queue1.dequeue().data)
+            queue2.enqueue(queue1.dequeue())
         }
 
         queue1.enqueue(val)
 
         while(!queue2.isEmpty()) {
-            queue1.enqueue(queue2.dequeue().data)
+            queue1.enqueue(queue2.dequeue())
         }
         this.length++
     }

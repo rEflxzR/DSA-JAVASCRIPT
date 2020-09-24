@@ -19,7 +19,7 @@ function balancedParenthesis(str) {
             stack.push(char)
         }
         if(close.includes(char)) {
-            if(open.indexOf(stack.top().data)==close.indexOf(char)) {
+            if(open.indexOf(stack.top())==close.indexOf(char)) {
                 stack.pop()
             }
             else {

@@ -74,4 +74,3 @@ myDoubleStack.push2(1)
 myDoubleStack.push1(10)
 console.log(myDoubleStack.top1element())
 console.log(myDoubleStack.top2element())
-

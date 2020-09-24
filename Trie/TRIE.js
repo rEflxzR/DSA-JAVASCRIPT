@@ -1,3 +1,5 @@
+// TRIE NODE AND TRIE CLASS
+
 class TrieNode {
     constructor(size=26) {
         this.array = new Array(size).fill(null)

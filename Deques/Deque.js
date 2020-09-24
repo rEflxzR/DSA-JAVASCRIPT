@@ -48,7 +48,7 @@ class Deque {
         this.rear = null
         this.length--
 
-        return temp
+        return temp.data
     }
 
     addFront(val) {
@@ -101,7 +101,7 @@ class Deque {
         temp.next = null
         this.front.previous = null
         this.length--
-        return temp
+        return temp.data
     }
 
     removeBack() {
@@ -119,7 +119,7 @@ class Deque {
         temp.previous = null
         this.length--
 
-        return temp
+        return temp.data
     }
 }
 

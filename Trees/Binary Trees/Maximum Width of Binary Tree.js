@@ -17,7 +17,7 @@ function maximumWidth(rootnode) {
 
         for(let i=1; i<=count; i++) {
 
-            let node = queue.dequeue().data
+            let node = queue.dequeue()
             if(node.left) {
                 queue.enqueue(node.left)
             }

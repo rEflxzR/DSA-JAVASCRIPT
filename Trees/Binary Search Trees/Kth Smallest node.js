@@ -1,22 +1,15 @@
-class Node {
+let {Node, BinaryTree} = require('../BINARY TREE NODE.js')
+
+class ModifiedNode extends Node {
     constructor(val) {
-        this.left = null
-        this.right = null
-        this.data = val
+        super(val)
         this.lchild = 0
     }
 }
 
-class BinaryTree {
-    constructor() {
-        this.root = null
-    }
-}
-
-
 function insertModifiedBST(val, rootnode, tree) {
     if(!rootnode) {
-        let newnode = new Node(val)
+        let newnode = new ModifiedNode(val)
         tree.root = newnode
         return newnode
     }
@@ -25,7 +18,7 @@ function insertModifiedBST(val, rootnode, tree) {
         rootnode.lchild++
 
         if(!rootnode.left) {
-            let newnode = new Node(val)
+            let newnode = new ModifiedNode(val)
             rootnode.left = newnode
             return newnode
         }
@@ -34,7 +27,7 @@ function insertModifiedBST(val, rootnode, tree) {
 
     else {
         if(!rootnode.right) {
-            let newnode = new Node(val)
+            let newnode = new ModifiedNode(val)
             rootnode.right = newnode
             return newnode
         }

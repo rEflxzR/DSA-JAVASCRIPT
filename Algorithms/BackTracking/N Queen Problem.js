@@ -39,7 +39,7 @@ function backTracking(matrix, size, col) {
 
 function Nqueen(maze_size) {
     let size = maze_size
-    let matrix = [...new Array(size)].map((a) => new Array(size).fill(0))
+    let matrix = [...Array(size)].map((a) => new Array(size).fill(0))
 
     if(backTracking(matrix, size, 0)) {
         console.log(matrix)
