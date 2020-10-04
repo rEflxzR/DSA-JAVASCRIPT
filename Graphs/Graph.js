@@ -239,7 +239,67 @@ class DirectedWeightedGraph {
 }
 
 
+
+// WEIGHTED GRAPH MIN HEAP
+class GraphMinHeap {
+    constructor(){
+        this.list = []
+    }
+
+    insert(v, w=Infinity) {
+        this.list.push({vertex: v, weight: w})
+        let c = this.list.length-1
+        let p = Math.floor((c-1)/2)
+
+        while(c>0 && this.list[c].weight<this.list[p].weight) {
+            [this.list[c], this.list[p]] = [this.list[p], this.list[c]]
+            c = p
+            p = Math.floor((c-1)/2)
+        }
+    }
+
+    heapifyUp(index) {
+        let p = Math.floor((index-1)/2)
+        while(index>0 && this.list[index].weight<this.list[p].weight) {
+            [this.list[index], this.list[p]] = [this.list[p], this.list[index]]
+            index = p
+            p = Math.floor((index-1)/2)
+        }
+
+    }
+
+    heapifyDown(index) {
+        let lc = 2*index+1
+        let rc = 2*index+2
+        let min = index
+        if(this.list[lc] && this.list[lc].weight<this.list[min].weight) {
+            min = lc
+        }
+        if(this.list[rc] && this.list[rc].weight<this.list[min].weight) {
+            min = rc
+        }
+        if(min!=index) {
+            [this.list[index], this.list[min]] = [this.list[min], this.list[index]]
+            this.heapifyDown(min)
+        }
+    }
+
+    extractMin() {
+        [this.list[0], this.list[this.list.length-1]] = [this.list[this.list.length-1], this.list[0]]
+        let res = this.list.pop()
+        this.heapifyDown(0)
+
+        return res
+    }
+
+    show() {
+        console.log(this.list)
+    }
+}
+
+
 module.exports.Graph = Graph
 module.exports.DirectedGraph = DirectedGraph
 module.exports.UndirectedWeightedGraph = UndirectedWeightedGraph
 module.exports.DirectedWeightedGraph = DirectedWeightedGraph
+module.exports.GraphMinHeap = GraphMinHeap

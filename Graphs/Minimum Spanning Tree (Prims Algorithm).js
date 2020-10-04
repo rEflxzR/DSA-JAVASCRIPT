@@ -1,34 +1,39 @@
-let {UndirectedWeightedGraph} = require('./Graph.js')
+let {GraphMinHeap, UndirectedWeightedGraph} = require('./Graph.js')
 
 function minimumSpanningTree(graph, sourcevertex) {
     let mstset = {}
-    let nonmst = {}
-    let mst = 0
+    let minheap = new GraphMinHeap()
+    let distance = {}
 
-    for(let vertex of Object.keys(graph.list)) {
-        vertex==sourcevertex ? mstset[vertex] = true : nonmst[vertex] = true
+    for(let v of Object.keys(graph.list)) {
+        if(v!=sourcevertex) {
+            minheap.insert(v)
+            distance[v] = Infinity
+        }
     }
+    minheap.insert(sourcevertex, 0)
+    distance[sourcevertex] = 0
 
-    while(Object.keys(nonmst).length!=0) {
-        let min = Infinity
-        let v = null
-        let vert = null
-        for(let vertex of Object.keys(mstset)) {
-            for(let nv of graph.list[vertex]) {
-                if(nv.weight<min && mstset[nv.vertex]==undefined) {
-                    min = nv.weight
-                    v = nv.vertex
-                    vert = vertex
+    while(minheap.list.length) {
+        let mv = minheap.extractMin().vertex
+        mstset[mv] = true
+
+        for(let nv of graph.list[mv]) {
+            if(mstset[nv.vertex]==undefined) {
+                distance[nv.vertex] = Math.min(distance[nv.vertex], nv.weight)
+                for(let i=0; i<minheap.list.length; i++) {
+                    if(minheap.list[i].vertex==nv.vertex) {
+                        if(minheap.list[i].weight>distance[nv.vertex]) {
+                            minheap.list[i].weight = distance[nv.vertex]
+                            minheap.heapifyUp(i)
+                        }
+                    }
                 }
             }
         }
-        mst = mst + min
-        mstset[v] = vert
-        delete nonmst[v]
     }
 
-    console.log(`Minimum Spanning Length of Graph - ${mst}`)
-    return mstset
+    return distance
 }
 
 

@@ -25,6 +25,7 @@ function minimumCoins(arr, sum, n=arr.length) {
         table[i] = coins
     }
 
+    console.log(table)
     return table[sum]
 }
 
